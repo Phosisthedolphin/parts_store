@@ -1,0 +1,150 @@
+html, body {
+    width: 100%;
+}
+@font-face {
+  font-family: 'Brush';
+  src: url('./font/BRUSHSCI.TTF');
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-weight: 100;
+    font-family: 'Karla';
+    background: lightgray;
+}
+
+.container {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.content {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+
+}
+
+.title {
+    font-size: 96px;
+}
+
+.opt {
+    margin-top: 30px;
+}
+
+.opt a {
+  text-decoration: none;
+  font-size: 150%;
+}
+
+a:hover {
+  color: red;
+}
+.info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.testrow {
+  align-items: center;
+  border-radius: 15px;
+  display: flex;
+  width: 50%;
+  padding: 40px;
+  margin: 40px;
+  justify-content: space-between;
+  -webkit-box-shadow: 10px 10px 48px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 48px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 48px 0px rgba(0,0,0,0.75);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.right {
+  color: red;
+}
+.catalogue-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
+  padding: 20px;
+  width: 70%;
+  justify-content: center;
+  margin: auto;
+  background: lightgray;
+}
+.catalogue-card {
+  height: 388px;
+  padding: 20px;
+  background: white;
+}
+header {
+  height: 80px;
+  background: white;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sub-header {
+    height: 50px;
+    background: #222222;
+    display: flex;
+    flex-direction: row;
+}
+.sub-header ul li {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 20px;
+}
+.sub-header-dropdown {
+  height: 50px;
+  background: gray;
+  display: none;
+  flex-direction: row;
+  position: relative;
+}
+.sub-header-dropdown-show {
+  display: flex;
+}
+.sub-header-dropdown ul li {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: black;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 20px;
+}
+.part-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.GBM {
+  font-family: 'Times New Roman', Times, serif;
+  color: #397AC1;
+}
+h2 {
+  font-family: 'Brush';
+  color: #397AC1;
+}
+.fancybox-image {
+  max-width: 400px;
+}
