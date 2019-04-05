@@ -11,7 +11,36 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping data for table dolphin.test: ~6,955 rows (approximately)
+
+-- Dumping database structure for dolphin
+CREATE DATABASE IF NOT EXISTS `dolphin` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `dolphin`;
+
+-- Dumping structure for table dolphin.test
+CREATE TABLE IF NOT EXISTS `test` (
+  `bin_desc` varchar(255) NOT NULL,
+  `bin_location` varchar(255) NOT NULL,
+  `part_number` varchar(255) NOT NULL,
+  `item_description` varchar(255) NOT NULL,
+  `item_category` varchar(255) NOT NULL,
+  `supplier` varchar(255) NOT NULL,
+  `item_status` varchar(255) NOT NULL,
+  `one_time` varchar(255) NOT NULL,
+  `bin_location_2` varchar(255) NOT NULL,
+  `bin_desc_2` varchar(255) NOT NULL,
+  `bin_location_3` varchar(255) NOT NULL,
+  `bin_desc_3` varchar(255) NOT NULL,
+  `item_count` varchar(50) NOT NULL,
+  `on_order` varchar(50) NOT NULL,
+  `in_stock` varchar(50) NOT NULL,
+  `spord_in_stock` varchar(50) NOT NULL,
+  `core` varchar(50) NOT NULL,
+  `item_cos` varchar(50) NOT NULL,
+  `oem_rt` varchar(255) NOT NULL,
+  `count_2` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table dolphin.test: ~7,108 rows (approximately)
 /*!40000 ALTER TABLE `test` DISABLE KEYS */;
 INSERT INTO `test` (`bin_desc`, `bin_location`, `part_number`, `item_description`, `item_category`, `supplier`, `item_status`, `one_time`, `bin_location_2`, `bin_desc_2`, `bin_location_3`, `bin_desc_3`, `item_count`, `on_order`, `in_stock`, `spord_in_stock`, `core`, `item_cos`, `oem_rt`, `count_2`) VALUES
 	('3.30E-01', 'UE', 'SSNIP075200', 'Nipple Ss 3/4 X 2``', 'Default Warehouse', 'Other Supplier', 'Active', 'No', 'UE', '3.30E-01', '', '', '', '0', '3', '0', '0', '1.5', 'Cal-GBM', ''),
