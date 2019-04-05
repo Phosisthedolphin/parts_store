@@ -41,11 +41,23 @@
         </ul>
       </div>
       <div class="catalogue-wrapper">
-        <a href="index.php">
+        <!-- <a href="index.php"> -->
         <div class="catalogue-card part-card">
           <img src="./img/PARTSCARD.jpg" style="width:300px;">
         </div>
-      </a>
+        <div class="catalogue-card part-card">
+          <img src="./img/PAGE HEADER VALVES VALVES.jpg" style="width:300px;">
+        </div>
+        <div class="catalogue-card part-card">
+          <img src="./img/PAGE HEADER ALL HOSES.jpg" style="width:300px;">
+        </div>
+        <div class="catalogue-card part-card">
+          <img src="./img/PAGE HEADER ALL BRAKES.jpg" style="width:300px;">
+        </div>
+        <div class="catalogue-card part-card">
+          <img src="./img/PAGE HEADER ALL CAM & GROOVE.jpg" style="width:300px;">
+        </div>
+      <!-- </a> -->
 
 
 
