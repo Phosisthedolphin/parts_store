@@ -67,33 +67,33 @@
                 "<br /><br />".
                 "<a id='image-link' href='/img/".
                 $row['part_number'].
-                " A.jpg'".
+                " A.jpeg'".
                 " data-fancybox='gallery'><img class='full' id='".
                 // $row["part_number"].
                 "full-image".
                 "'".
                 "style='height:200px;' src='/img/".
                 $row["part_number"].
-                " A.jpg'></a>".
+                " A.jpeg'></a>".
 
                 "<br /><br />".
 
                 "<img class='thumb' style='height: 50px;' src='/img/".
                 $row['part_number'].
-                " A.jpg'>".
+                " A.jpeg'>".
 
 
                 "<img class='thumb' style='height: 50px;' src='/img/".
                 $row["part_number"].
-                " B.jpg'>".
+                " B.jpeg'>".
 
                 "<img class='thumb' style='height: 50px;' src='/img/".
                 $row["part_number"].
-                " C.jpg'>".
+                " C.jpeg'>".
 
                 "<img class='thumb' style='height: 50px;' src='/img/".
                 $row["part_number"].
-                " D.jpg'>".
+                " D.jpeg'>".
                 "<br /><br />".
 
                 "<span>Part #: </span>".
