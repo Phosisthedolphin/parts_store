@@ -45,8 +45,8 @@
 
 
             <?php
-            $servername = "localhost";
-            $username = "root";
+            $servername = "ip-172-31-3-44";
+            $username = "ubuntu";
             $password = "";
             $dbname = "dolphin";
 
