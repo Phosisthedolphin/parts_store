@@ -45,9 +45,9 @@
 
 
             <?php
-            $servername = "ip-172-31-3-44";
-            $username = "ubuntu";
-            $password = "";
+            $servername = "localhost";
+            $username = "root";
+            $password = "toor";
             $dbname = "dolphin";
 
             $conn = new mysqli($servername, $username, $password, $dbname);
