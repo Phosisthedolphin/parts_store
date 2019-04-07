@@ -11,7 +11,7 @@ body {
     width: 100%;
     font-weight: 100;
     font-family: 'Karla';
-    background: lightgray;
+    background: #ECF3FF;
 }
 
 .container {
@@ -75,12 +75,17 @@ box-shadow: 10px 10px 48px 0px rgba(0,0,0,0.75);
   width: 70%;
   justify-content: center;
   margin: auto;
-  background: lightgray;
+  background: #ECF3FF;
 }
 .catalogue-card {
   height: 388px;
   padding: 20px;
   background: white;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 600;
+  -webkit-box-shadow: 10px 10px 5px -5px rgba(199,199,199,1);
+  -moz-box-shadow: 10px 10px 5px -5px rgba(199,199,199,1);
+  box-shadow: 10px 10px 5px -5px rgba(199,199,199,1);
 }
 header {
   height: 80px;
@@ -105,7 +110,7 @@ header {
 }
 .sub-header-dropdown {
   height: 50px;
-  background: gray;
+  background: #0060B6;
   display: none;
   flex-direction: row;
   position: relative;
@@ -115,10 +120,17 @@ header {
 }
 .sub-header-dropdown ul li {
   font-family: 'Roboto Condensed', sans-serif;
-  color: black;
+  color: white;
+  text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
   margin-right: 20px;
+}
+.sub-header-dropdown a:link {
+  color: white;
+}
+.sub-header-dropdown a:visited {
+  color: white;
 }
 .part-card {
   display: flex;
