@@ -3,7 +3,7 @@ function dropdown() {
   }
 
 $('img.thumb').click(function() {
-    var full = $(this).parent('.catalogue-card').find('img.full');
+    var full = $(this).parent('.catalogue-card-inner').find('img.full');
     full.attr('src', $(this).attr('src'));
-    $(this).parent('.catalogue-card').find('#image-link').attr('href', full.attr('src'));
+    $(this).parent('.catalogue-card-inner').find('#image-link').attr('href', full.attr('src'));
 });

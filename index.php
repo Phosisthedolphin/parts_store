@@ -48,7 +48,7 @@
             <?php
             $servername = "localhost";
             $username = "root";
-            $password = "toor";
+            $password = "";
             $dbname = "dolphin";
 
             $conn = new mysqli($servername, $username, $password, $dbname);
@@ -64,7 +64,10 @@
             if ($result->num_rows > 0) {
               while($row = $result->fetch_assoc()) {
                 echo "<div class='catalogue-card'>".
+                "<div class='catalogue-card-description'>".
                 $row["item_description"].
+                "</div>".
+                "<div class='catalogue-card-inner'>".
                 "<br /><br />".
                 "<a id='image-link' href='/img/".
                 $row['part_number'].
@@ -100,6 +103,7 @@
                 "<span>Part #: </span>".
                 $row["part_number"].
                 "<br/><br />".
+                "</div>".
 
 
                 "</div>";
