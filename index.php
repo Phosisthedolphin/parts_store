@@ -22,7 +22,7 @@
     </head>
     <body>
       <header>
-           <img src='./img/logo.jpeg' style="width: 140px;">
+           <a href="./index2.php"><img src='./img/logo.jpeg' style="width: 140px;"></a>
       </header>
       <div class="sub-header">
         <ul>

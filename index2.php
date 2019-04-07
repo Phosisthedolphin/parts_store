@@ -20,7 +20,7 @@
     </head>
     <body>
       <header>
-           <img src='./img/logo.jpeg' style="width: 140px;">
+           <a href="./index2.php"><img src='./img/logo.jpeg' style="width: 140px;"></a>
       </header>
       <div class="sub-header">
         <ul>
@@ -42,9 +42,11 @@
       </div>
       <div class="catalogue-wrapper">
         <!-- <a href="index.php"> -->
+        <a href="./index.php">
         <div class="catalogue-card part-card">
           <img src="./img/PARTSCARD.jpeg" style="width:300px;">
         </div>
+        </a>
         <div class="catalogue-card part-card">
           <img src="./img/PAGE HEADER VALVES VALVES.jpeg" style="width:300px;">
         </div>
