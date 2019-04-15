@@ -48,7 +48,7 @@
             <?php
             $servername = "localhost";
             $username = "root";
-            $password = "toor";
+            $password = "";
             $dbname = "dolphin";
 
             $conn = new mysqli($servername, $username, $password, $dbname);
