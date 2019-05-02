@@ -1,0 +1,330 @@
+html, body {
+    width: 100%;
+}
+@font-face {
+  font-family: 'Brush';
+  src: url('./font/BRUSHSCI.TTF');
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-weight: 100;
+    font-family: 'Karla';
+    background: #ECF3FF;
+}
+
+.container {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.content {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+
+}
+
+.title {
+    font-size: 96px;
+}
+
+.opt {
+    margin-top: 30px;
+}
+
+.opt a {
+  text-decoration: none;
+  font-size: 150%;
+}
+
+a:hover {
+  color: red;
+}
+.info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.testrow {
+  align-items: center;
+  border-radius: 15px;
+  display: flex;
+  width: 50%;
+  padding: 40px;
+  margin: 40px;
+  justify-content: space-between;
+  -webkit-box-shadow: 10px 10px 48px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 48px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 48px 0px rgba(0,0,0,0.75);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+a {
+  cursor: hand;
+}
+.right {
+  color: red;
+}
+.catalogue-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
+  padding: 20px;
+  width: 70%;
+  justify-content: center;
+  margin: auto;
+  background: #ECF3FF;
+}
+.catalogue-card {
+  height: 420px;
+  background: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 600;
+  -webkit-box-shadow: 10px 10px 5px -5px rgba(199,199,199,1);
+  -moz-box-shadow: 10px 10px 5px -5px rgba(199,199,199,1);
+  box-shadow: 10px 10px 5px -5px rgba(199,199,199,1);
+}
+.catalogue-card-description {
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background: #222;
+  height: 30px;
+}
+.catalogue-card-inner {
+  margin-left: 40px;
+  position: relative;
+}
+.thumb {
+  cursor: pointer;
+}
+header {
+  height: 80px;
+  background: white;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sub-header {
+    height: 50px;
+    background: #222222;
+    display: flex;
+    flex-direction: row;
+}
+.sub-header ul li {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 20px;
+}
+.sub-header-dropdown {
+  height: 50px;
+  background: #0060B6;
+  display: none;
+  flex-direction: row;
+  position: relative;
+}
+.sub-header-dropdown-show {
+  display: flex;
+}
+.sub-header-dropdown ul li {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 20px;
+}
+.sub-header-dropdown a:link {
+  color: white;
+}
+.sub-header-dropdown a:visited {
+  color: white;
+}
+.part-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+}
+button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.GBM {
+  font-family: 'Times New Roman', Times, serif;
+  color: #397AC1;
+}
+h2 {
+  font-family: 'Brush';
+  color: #397AC1;
+}
+.fancybox-image {
+  max-width: 400px;
+}
+.top-panel {
+  height: 60px;
+  color: white;
+  align-items: center;
+  padding: auto;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 24px;
+  width: 100%;
+  background: #222;
+  position: fixed;
+  z-index: 100;
+  justify-content: center;
+  display: flex;
+}
+.top-panel-content {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+.backend-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+  padding-top: 60px;
+}
+.sidebar {
+  color: white;
+  background: #0060B6;
+  width: 400px;
+  height: 100vw;
+  min-height: 100%;
+  position: fixed;
+  padding: auto;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+.sidebar-content {
+  flex-direction: column;
+  margin-top: 20px;
+  justify-content: center;
+}
+.sidebar-item {
+  flex-direction: row;
+  font-size: 24px;
+  width: 380px;
+  font-family: 'Roboto Condensed', sans-serif;
+  border-top: 1px solid white;
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  justify-content: left;
+  padding-left: 20px;
+}
+.sidebar-item:hover {
+  color: #0060B6;
+  background: white;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.sidebar-spacer {
+  width: 40px;
+}
+.border-bottom {
+  border-bottom: 1px solid white;
+}
+.sidebar-title {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.backend-content {
+  margin-left: 580px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.backend-card {
+  width: 1100px;
+  height: 400px;
+  background: white;
+  margin-bottom: 20px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  -webkit-box-shadow: 10px 10px 5px -5px rgba(199,199,199,1);
+  -moz-box-shadow: 10px 10px 5px -5px rgba(199,199,199,1);
+  box-shadow: 10px 10px 5px -5px rgba(199,199,199,1);
+}
+.backend-card-grid {
+  flex-direction: row;
+  display: flex;
+}
+.backend-card-small {
+  width: 540px;
+  height: 400px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  -webkit-box-shadow: 10px 10px 5px -5px rgba(199,199,199,1);
+  -moz-box-shadow: 10px 10px 5px -5px rgba(199,199,199,1);
+  box-shadow: 10px 10px 5px -5px rgba(199,199,199,1);
+}
+.backend-card-small-title {
+  background: #222;
+  color: white;
+  font-size: 16px;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 10px;
+  margin: auto;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.backend-card-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.backend-content-card {
+  display: flex;
+  width: 100%;
+
+  flex-direction: row;
+  justify-content: space-evenly;
+
+
+  align-items: center;
+}
+.backend-content-card:hover {
+  background: #0060B6;
+  color: white;
+}
+.backend-content-card span {
+  font-size: 64px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 600;
+}

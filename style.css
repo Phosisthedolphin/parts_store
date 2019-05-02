@@ -70,7 +70,7 @@ a {
 .right {
   color: red;
 }
-.catalogue-wrapper {
+#catalogue-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1em;
@@ -117,13 +117,13 @@ header {
   justify-content: center;
   align-items: center;
 }
-.sub-header {
+#sub-header {
     height: 50px;
     background: #222222;
     display: flex;
     flex-direction: row;
 }
-.sub-header ul li {
+#sub-header ul li {
     font-family: 'Roboto Condensed', sans-serif;
     color: white;
     text-transform: uppercase;

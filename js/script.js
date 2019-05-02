@@ -7,3 +7,17 @@ $('img.thumb').click(function() {
     full.attr('src', $(this).attr('src'));
     $(this).parent('.catalogue-card-inner').find('#image-link').attr('href', full.attr('src'));
 });
+
+$(document).ready(function(){
+  var trigger = $('#sub-header ul li a'),
+  container = $('#catalogue-wrapper');
+
+  trigger.on('click', function(){
+    var $this = $(this),
+        target = $this.data('target');
+
+  container.load(target + '.php');
+
+  return false;
+  });
+});
