@@ -80,7 +80,7 @@
         }
         
         for($page = 1; $page<=$number_of_pages; $page++) {
-            echo '<a href="lightpagination.php?page=' . $page . '">' . $page . '</a> ';
+            echo '<a href="index.php?page=' . $page . '">' . $page . '</a> ';
         }
 
 

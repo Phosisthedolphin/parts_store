@@ -1,70 +1,87 @@
 <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "dolphin";
-
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            $keyword = "valve";
-
-            if ($conn->connect_error) {
-              die("Connection failed: " . $conn->connect_error);
-            }
-
-            $sql="SELECT part_number, item_description FROM parts WHERE item_description LIKE '%{$keyword}%' LIMIT 40";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-              while($row = $result->fetch_assoc()) {
-                echo "<div class='catalogue-card'>".
-                "<div class='catalogue-card-description'>".
-                $row["item_description"].
-                "</div>".
-                "<div class='catalogue-card-inner'>".
-                "<br /><br />".
-                "<a id='image-link' href='/img/".
-                $row['part_number'].
-                " A.jpeg'".
-                " data-fancybox='gallery'><img class='full' id='".
-                // $row["part_number"].
-                "full-image".
-                "'".
-                "style='height:200px;' src='/img/".
-                $row["part_number"].
-                " A.jpeg'></a>".
-
-                "<br /><br />".
-
-                "<img class='thumb' style='height: 50px;' src='/img/".
-                $row['part_number'].
-                " A.jpeg'>".
 
 
-                "<img class='thumb' style='height: 50px;' src='/img/".
-                $row["part_number"].
-                " B.jpeg'>".
+        $con = mysqli_connect('localhost', 'root', '');
+        mysqli_select_db($con, 'dolphin');
 
-                "<img class='thumb' style='height: 50px;' src='/img/".
-                $row["part_number"].
-                " C.jpeg'>".
+        $results_per_page = 40;
+        $keyword = 'valve';
 
-                "<img class='thumb' style='height: 50px;' src='/img/".
-                $row["part_number"].
-                " D.jpeg'>".
-                "<br /><br />".
+        // $sql = "SELECT * FROM parts";
+        $sql = "SELECT part_number, item_description FROM parts WHERE item_description LIKE '%{$keyword}%'";
+        $result = mysqli_query($con, $sql);
+        $number_of_results = mysqli_num_rows($result);
 
-                "<span>Part #: </span>".
-                $row["part_number"].
-                "<br/><br />".
-                "</div>".
+        // while($row = mysqli_fetch_array($result)) {
+        //     echo $row['bin_desc'] . '<br>';
+        // }
+
+        $number_of_pages = ceil($number_of_results/$results_per_page);
+
+        if(!isset($_GET['page'])) {
+            $page = 1;
+        } else {
+            $page = $_GET['page'];
+        }
+
+        $this_page_first_result = ($page-1)*$results_per_page;
+
+        // $sql = "SELECT * FROM parts LIMIT " . $this_page_first_result . ',' . $results_per_page;
+        $sql = "SELECT part_number, item_description FROM parts WHERE item_description LIKE '%{$keyword}%' LIMIT " . $this_page_first_result . ',' . $results_per_page;
+        $result = mysqli_query($con, $sql);
+
+        while($row = mysqli_fetch_array($result)) {
+            // echo $row['item_description'] . '<br>';
+            echo
+            "<div class='catalogue-card'>".
+            "<div class='catalogue-card-description'>".
+            $row["item_description"].
+            "</div>".
+            "<div class='catalogue-card-inner'>".
+            "<br /><br />".
+            "<a id='image-link' href='/img/".
+            $row['part_number'].
+            " A.jpeg'".
+            " data-fancybox='gallery'><img class='full' id='".
+            // $row["part_number"].
+            "full-image".
+            "'".
+            "style='height:200px;' src='/img/".
+            $row["part_number"].
+            " A.jpeg'></a>".
+
+            "<br /><br />".
+
+            "<img class='thumb' style='height: 50px;' src='/img/".
+            $row['part_number'].
+            " A.jpeg'>".
 
 
-                "</div>";
-              }
-            } else {
-              echo "0 results";
-            }
-          
+            "<img class='thumb' style='height: 50px;' src='/img/".
+            $row["part_number"].
+            " B.jpeg'>".
 
-            $conn->close();
-?>
+            "<img class='thumb' style='height: 50px;' src='/img/".
+            $row["part_number"].
+            " C.jpeg'>".
+
+            "<img class='thumb' style='height: 50px;' src='/img/".
+            $row["part_number"].
+            " D.jpeg'>".
+            "<br /><br />".
+
+            "<span>Part #: </span>".
+            $row["part_number"].
+            "<br/><br />".
+            "</div>".
+
+
+            "</div>";
+        }
+        
+        for($page = 1; $page<=$number_of_pages; $page++) {
+            echo '<a href="valves.php?page=' . $page . '">' . $page . '</a> ';
+        }
+
+
+    ?>
