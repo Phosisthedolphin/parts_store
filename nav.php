@@ -4,8 +4,8 @@
       <div id="sub-header">
         <ul>
           <!-- <button onclick="dropdown()">Click me</button> -->
-          <li><a href='#' data-target='trucklite'>Lights</li>
-          <li><a href='#' data-target='valves'>Valves</li>
+          <li><a href='#' key='trucklite' data-target='trucklite'>Lights</li>
+          <li><a href='#' key='valve' data-target='valves'>Valves</li>
           <li><a href='#' data-target='hoses'>Hoses</li>
           <li><a href='#' data-target='brakes'>Brakes</li>
           <li><button onclick="dropdown()">Cam & Groove</button></li>

@@ -5,7 +5,8 @@
         mysqli_select_db($con, 'dolphin');
 
         $results_per_page = 40;
-        $keyword = 'trucklite';
+        // $keyword = 'trucklite';
+        $keyword =  $_GET["key"];
 
         // $sql = "SELECT * FROM parts";
         $sql = "SELECT part_number, item_description FROM parts WHERE item_description LIKE '%{$keyword}%'";
@@ -80,7 +81,7 @@
         }
         
         for($page = 1; $page<=$number_of_pages; $page++) {
-            echo '<a href="index.php?page=' . $page . '">' . $page . '</a> ';
+            echo '<a href="index.php?page=' . $page . '&key=' . $keyword .'">' . $page . '</a> ';
         }
 
 

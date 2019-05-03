@@ -9,7 +9,7 @@ $('img.thumb').click(function() {
 });
 
 $(document).ready(function(){
-  var trigger = $('#sub-header ul li a'),
+  var trigger = $('#subheader ul li a'),
   container = $('#catalogue-wrapper');
 
   trigger.on('click', function(){
