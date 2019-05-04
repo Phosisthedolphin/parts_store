@@ -80,9 +80,12 @@
             "</div>";
         }
         
-        for($page = 1; $page<=$number_of_pages; $page++) {
-            echo '<a href="index.php?page=' . $page . '&key=' . $keyword .'">' . $page . '</a> ';
-        }
+        // for($page = 1; $page<=$number_of_pages; $page++) {
+        //     echo
+        //     '<div class="pagination">'. 
+        //     '<a href="index.php?page=' . $page . '&key=' . $keyword .'">' . $page . '</a> '.
+        //     '</div>';
+        // }
 
 
     ?>
