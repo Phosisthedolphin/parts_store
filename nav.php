@@ -4,10 +4,11 @@
       <div id="sub-header">
         <ul>
           <!-- <button onclick="dropdown()">Click me</button> -->
-          <li><a href='#' key='trucklite' data-target='trucklite'>Lights</li>
-          <li><a href='#' key='valve' data-target='valves'>Valves</li>
-          <li><a href='#' data-target='hoses'>Hoses</li>
-          <li><a href='#' data-target='brakes'>Brakes</li>
+          <li><a href='?key=trucklite' data-target='trucklite'>Lights</li>
+          <li><a href='?key=valve' data-target='valve'>Valves</li>
+          <li><a href='?key=hose' data-target='hoses'>Hoses</li>
+          <li><a href='?key=mirror' data-target='mirror'>Mirror</li>
+          <li><a href='?key=brake' data-target='brakes'>Brakes</li>
           <li><button onclick="dropdown()">Cam & Groove</button></li>
         </ul>
       </div>
