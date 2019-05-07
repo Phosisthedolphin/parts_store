@@ -9,7 +9,8 @@
           <li><a href='?key=hose' data-target='hoses'>Hoses</li>
           <li><a href='?key=mirror' data-target='mirror'>Mirror</li>
           <li><a href='?key=brake' data-target='brakes'>Brakes</li>
-          <li><button onclick="dropdown()">Cam & Groove</button></li>
+          <li><a href='?key=fitting' data-target='fitting'>Fitting</li>
+          <li><a href='?key=red' data-target='red'><button onclick="primaryCategory()">Cam & Groove</button></a></li>
         </ul>
       </div>
       <div id="subdrop" class="sub-header-dropdown">

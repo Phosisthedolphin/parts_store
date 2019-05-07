@@ -10,12 +10,9 @@
 
         // $sql = "SELECT * FROM parts";
         $sql = "SELECT part_number, item_description FROM parts WHERE item_description LIKE '%{$keyword}%'";
+        
         $result = mysqli_query($con, $sql);
         $number_of_results = mysqli_num_rows($result);
-
-        // while($row = mysqli_fetch_array($result)) {
-        //     echo $row['bin_desc'] . '<br>';
-        // }
 
         $number_of_pages = ceil($number_of_results/$results_per_page);
 
@@ -89,3 +86,4 @@
 
 
     ?>
+

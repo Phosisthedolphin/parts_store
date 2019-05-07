@@ -328,7 +328,25 @@ a {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 600;
 }
-.pagination {
-  background: black;
+.pagination-wrapper {
   display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.pagination {
+  color: black;
+  font-size: 24px;
+  border: 1px solid black;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+.pagination:hover {
+  background: white;
+}
+.pagination a {
+  color: black;
 }
