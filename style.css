@@ -159,6 +159,15 @@ header {
   justify-content: center;
   align-items: center;
 }
+.part-number {
+  display: flex;
+  justify-content: left;
+  font-weight: 400;
+  color: #222;
+  font-size: 20px;
+  align-items: flex-end;
+  font-family: 'Roboto Condensed', sans-serif;
+}
 a {
   text-decoration: none;
 }

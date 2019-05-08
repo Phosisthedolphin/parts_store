@@ -67,9 +67,10 @@
             $row["part_number"].
             " D.jpeg'>".
             "<br /><br />".
-
-            "<span>Part #: </span>".
+            "<div class='part-number'>".
+            "<span># </span>".
             $row["part_number"].
+            "</div>".
             "<br/><br />".
             "</div>".
 

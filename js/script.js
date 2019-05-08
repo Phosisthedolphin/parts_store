@@ -1,6 +1,14 @@
 function dropdown() {
     document.getElementById("subdrop").classList.toggle("sub-header-dropdown-show");
-  }
+  };
+
+  // $("img").on("error", function() {
+  //   $(this).hide();
+  // });
+
+  $('img').on("error", function() {
+    $(this).attr('src', '/img/missing.jpg');
+  });
 
 $('img.thumb').click(function() {
     var full = $(this).parent('.catalogue-card-inner').find('img.full');
