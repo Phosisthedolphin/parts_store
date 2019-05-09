@@ -8,17 +8,17 @@ function dropdown() {
   //   $(this).hide();
   // });
 
-  $('img').on("error", function() {
-    $(this).attr('src', '/img/missing.jpg');
-  });
+  // $('img').on("error", function() {
+  //   $(this).attr('src', '/img/missing.jpg');
+  // });
 
 
 
-//   function imgError(image) {
-//     image.onerror = "";
-//     image.src = "/img/missing.jpg";
-//     return true;
-// };
+  function imgError(image) {
+    image.onerror = "";
+    image.src = "/img/missing.jpg";
+    return true;
+};
 
 $('img.thumb').click(function() {
     var full = $(this).parent('.catalogue-card-inner').find('img.full');
