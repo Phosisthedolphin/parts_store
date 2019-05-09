@@ -1,7 +1,7 @@
 <?php
 
 
-        $con = mysqli_connect('localhost', 'root', '');
+        $con = mysqli_connect('localhost', 'root', 'toor');
         mysqli_select_db($con, 'dolphin');
 
         $results_per_page = 40;
