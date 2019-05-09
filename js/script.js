@@ -1,3 +1,5 @@
+AOS.init();
+
 function dropdown() {
     document.getElementById("subdrop").classList.toggle("sub-header-dropdown-show");
   };
@@ -9,6 +11,14 @@ function dropdown() {
   $('img').on("error", function() {
     $(this).attr('src', '/img/missing.jpg');
   });
+
+
+
+//   function imgError(image) {
+//     image.onerror = "";
+//     image.src = "/img/missing.jpg";
+//     return true;
+// };
 
 $('img.thumb').click(function() {
     var full = $(this).parent('.catalogue-card-inner').find('img.full');

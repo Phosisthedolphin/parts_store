@@ -31,7 +31,7 @@
         while($row = mysqli_fetch_array($result)) {
             // echo $row['item_description'] . '<br>';
             echo
-            "<div class='catalogue-card'>".
+            "<div data-aos='fade-up' class='catalogue-card'>".
             "<div class='catalogue-card-description'>".
             $row["item_description"].
             "</div>".
@@ -46,26 +46,26 @@
             "'".
             "style='height:200px;' src='/img/".
             $row["part_number"].
-            " A.jpeg'></a>".
+            " A.jpeg' onerror='imgError(this);'></a>".
 
             "<br /><br />".
 
             "<img class='thumb' style='height: 50px;' src='/img/".
             $row['part_number'].
-            " A.jpeg'>".
+            " A.jpeg' onerror='imgError(this);'>".
 
 
             "<img class='thumb' style='height: 50px;' src='/img/".
             $row["part_number"].
-            " B.jpeg'>".
+            " B.jpeg' onerror='imgError(this);'>".
 
             "<img class='thumb' style='height: 50px;' src='/img/".
             $row["part_number"].
-            " C.jpeg'>".
+            " C.jpeg' onerror='imgError(this);'>".
 
             "<img class='thumb' style='height: 50px;' src='/img/".
             $row["part_number"].
-            " D.jpeg'>".
+            " D.jpeg' onerror='imgError(this);'>".
             "<br /><br />".
             "<div class='part-number'>".
             "<span># </span>".
