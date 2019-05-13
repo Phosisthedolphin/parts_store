@@ -4,13 +4,14 @@
       <div id="sub-header">
         <ul>
           <!-- <button onclick="dropdown()">Click me</button> -->
-          <li><a href='?key=trucklite' data-target='trucklite'>Lights</li>
-          <li><a href='?key=valve' data-target='valve'>Valves</li>
-          <li><a href='?key=hose' data-target='hoses'>Hoses</li>
-          <li><a href='?key=mirror' data-target='mirror'>Mirror</li>
-          <li><a href='?key=brake' data-target='brakes'>Brakes</li>
-          <li><a href='?key=fitting' data-target='fitting'>Fitting</li>
-          <li><a href='?key=red' data-target='red'><button onclick="primaryCategory()">Cam & Groove</button></a></li>
+          <!-- <li><a href='?key=trucklite' data-target='trucklite'>Lights</li> -->
+          <!-- <li><a href='?key=valve' data-target='valve'>Valves</li> -->
+          <!-- <li><a href='?key=hose' data-target='hoses'>Hoses</li> -->
+          <!-- <li><a href='?key=mirror' data-target='mirror'>Mirror</li> -->
+          <!-- <li><a href='?key=brake' data-target='brakes'>Brakes</li> -->
+          <!-- <li><a href='?key=fitting' data-target='fitting'>Fitting</li> -->
+          <li><a href='?category=LIGHTS' data-target='LIGHTS'>TESTLIGHTS</li></a>
+          <!-- <li><a href='?key=red' data-target='red'><button onclick="primaryCategory()">Cam & Groove</button></a></li> -->
         </ul>
       </div>
       <div id="subdrop" class="sub-header-dropdown">

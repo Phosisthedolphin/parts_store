@@ -1,15 +1,31 @@
 <?php
 
 
-        $con = mysqli_connect('localhost', 'root', 'toor');
-        mysqli_select_db($con, 'dolphin');
+        $con = mysqli_connect('localhost', 'root', '');
+        mysqli_select_db($con, 'dolphin2');
 
         $results_per_page = 40;
         // $keyword = 'trucklite';
-        $keyword =  $_GET["key"];
+        // $keyword =  $_GET["key"];
+
+        $category = $_GET["category"];
+        $sub_category = $_GET["sub_category"];
+        $manufacturer = $_GET["manufacturer"];
 
         // $sql = "SELECT * FROM parts";
-        $sql = "SELECT part_number, item_description FROM parts WHERE item_description LIKE '%{$keyword}%'";
+        // $sql = "SELECT part_number, item_description FROM parts WHERE item_description LIKE '%{$keyword}%'";
+
+        $sql = "SELECT bin_description_2, bin_description_3, bin_description_4 FROM parts WHERE ";
+
+        if ($category != NULL) {
+            $sql = $sql . "bin_description_2 LIKE '%{$category}%'";
+        }
+        if ($sub_category != NULL) {
+            $sql = $sql . "bin_description_3 LIKE '%{$sub_category}%'";
+        }
+        if ($manufacturer != NULL) {
+            $sql = $sql . "bin_description_4 LIKE '%{$manufacturer}%'";
+        }
         
         $result = mysqli_query($con, $sql);
         $number_of_results = mysqli_num_rows($result);
@@ -25,7 +41,20 @@
         $this_page_first_result = ($page-1)*$results_per_page;
 
         // $sql = "SELECT * FROM parts LIMIT " . $this_page_first_result . ',' . $results_per_page;
-        $sql = "SELECT part_number, item_description FROM parts WHERE item_description LIKE '%{$keyword}%' LIMIT " . $this_page_first_result . ',' . $results_per_page;
+        // $sql = "SELECT part_number, item_description FROM parts WHERE item_description LIKE '%{$keyword}%' LIMIT " . $this_page_first_result . ',' . $results_per_page;
+
+        $sql = "SELECT bin_description_2, bin_description_3, bin_description_4 FROM parts WHERE ";
+
+        if ($category != NULL) {
+            $sql = $sql . "bin_description_2 LIKE '%{$category}%' LIMIT " . $this_page_first_result . ',' . $results_per_page;
+        }
+        if ($sub_category != NULL) {
+            $sql = $sql . "bin_description_3 LIKE '%{$sub_category}%' LIMIT " . $this_page_first_result . ',' . $results_per_page;
+        }
+        if ($manufacturer != NULL) {
+            $sql = $sql . "bin_description_4 LIKE '%{$manufacturer}%' LIMIT " . $this_page_first_result . ',' . $results_per_page;
+        }
+
         $result = mysqli_query($con, $sql);
 
         while($row = mysqli_fetch_array($result)) {
