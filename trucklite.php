@@ -18,16 +18,17 @@
         $sql = "SELECT bin_description_2, bin_description_3, bin_description_4 FROM parts WHERE ";
 
         if ($category != NULL) {
-            $sql = $sql . "bin_description_2 LIKE '%{$category}%'";
+            $sql = $sql . "bin_description_2 LIKE '%{$category}%' AND ";
         }
         if ($sub_category != NULL) {
-            $sql = $sql . "bin_description_3 LIKE '%{$sub_category}%'";
+            $sql = $sql . "bin_description_3 LIKE '%{$sub_category}%' AND ";
         }
         if ($manufacturer != NULL) {
             $sql = $sql . "bin_description_4 LIKE '%{$manufacturer}%'";
         }
         
         $result = mysqli_query($con, $sql);
+        echo("Error description: " . mysqli_error($con));
         $number_of_results = mysqli_num_rows($result);
 
         $number_of_pages = ceil($number_of_results/$results_per_page);
@@ -46,10 +47,10 @@
         $sql = "SELECT bin_description_2, bin_description_3, bin_description_4 FROM parts WHERE ";
 
         if ($category != NULL) {
-            $sql = $sql . "bin_description_2 LIKE '%{$category}%' LIMIT " . $this_page_first_result . ',' . $results_per_page;
+            $sql = $sql . "bin_description_2 LIKE '%{$category}%' LIMIT " . $this_page_first_result . ',' . $results_per_page . " AND ";
         }
         if ($sub_category != NULL) {
-            $sql = $sql . "bin_description_3 LIKE '%{$sub_category}%' LIMIT " . $this_page_first_result . ',' . $results_per_page;
+            $sql = $sql . "bin_description_3 LIKE '%{$sub_category}%' LIMIT " . $this_page_first_result . ',' . $results_per_page . " AND ";
         }
         if ($manufacturer != NULL) {
             $sql = $sql . "bin_description_4 LIKE '%{$manufacturer}%' LIMIT " . $this_page_first_result . ',' . $results_per_page;
