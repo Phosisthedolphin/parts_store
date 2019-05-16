@@ -9,7 +9,7 @@
             // '<div class="pagination">'. 
             // '<a href="index.php?page=' . $page . '&key=' . $keyword .'">' . $page . '</a> '.
             // '</div>';
-            '<a href="index.php?page=' . $page . '&manufacturer=' . $manufacturer .'">'.
+            '<a href="index.php?page=' . $page . '&category=' . $category . '&sub_category=' . $sub_category . '&manufacturer=' . $manufacturer .'">'.
             '<div class="pagination">'. 
              $page.
             '</div>'.
