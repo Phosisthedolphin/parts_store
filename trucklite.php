@@ -118,7 +118,7 @@
         // $sql = $sql . "LIMIT " . $this_page_first_result . ',' . $results_per_page;
 
         $result = mysqli_query($con, $sql);
-        echo("Error description: " . mysqli_error($con));
+        // echo("Error description: " . mysqli_error($con));
         while($row = mysqli_fetch_array($result)) {
             
             // echo $row['item_description'] . '<br>';

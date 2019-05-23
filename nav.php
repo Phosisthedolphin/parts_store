@@ -10,15 +10,23 @@
           <!-- <li><a href='?key=mirror' data-target='mirror'>Mirror</li> -->
           <!-- <li><a href='?key=brake' data-target='brakes'>Brakes</li> -->
           <!-- <li><a href='?key=fitting' data-target='fitting'>Fitting</li> -->
-          <li><a href='?category=LIGHTS' data-target='LIGHTS'>TESTLIGHTS</li></a>
+          <li><button onclick="dropdown()">LIGHTS</button></li>
           <!-- <li><a href='?key=red' data-target='red'><button onclick="primaryCategory()">Cam & Groove</button></a></li> -->
         </ul>
       </div>
       <div id="subdrop" class="sub-header-dropdown">
         <ul>
-          <li><a href="./index.php">Trucklite</a></li>
-          <li>Light 2</li>
-          <li>Light 3</li>
-          <li>Light 4</li>
-        </ul>
+          <li><a href="?category=LIGHTS">ALL LIGHTS</a></li>
+          <li><a href="?category=LIGHTS&sub_category=HARNESS">HARNESS</a></li>
+          <li><a href="?category=LIGHTS&sub_category=GROMMET">GROMMET</a></li>
+          <li><a href="?category=LIGHTS&sub_category=PIGTAIL">PIGTAIL</a></li>
+          <li><a href="?category=LIGHTS&sub_category=FLANGE">FLANGE</a></li>
+          <li><a href="?category=LIGHTS&sub_category=BASE">BASE</a></li>
+          <li><a href="?category=LIGHTS&sub_category=BOX">BOX</a></li>
+          <li><a href="?category=LIGHTS&sub_category=REFLECT">REFLECT</a></li>
+          <li><a href="?category=LIGHTS&sub_category=INCANDES">INCANDESCENT</a></li>
+          <li><a href="?category=LIGHTS&sub_category=CONTROL">CONTROL</a></li>
+          <li><a href="?category=LIGHTS&sub_category=LICENSE">LICENSE</a></li>
+          </ul>
       </div>
+      <div id="subdrop" class="valve-dropdown">

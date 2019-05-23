@@ -4,16 +4,6 @@ function dropdown() {
     document.getElementById("subdrop").classList.toggle("sub-header-dropdown-show");
   };
 
-  // $("img").on("error", function() {
-  //   $(this).hide();
-  // });
-
-  // $('img').on("error", function() {
-  //   $(this).attr('src', '/img/missing.jpg');
-  // });
-
-
-
   function imgError(image) {
     image.onerror = "";
     image.src = "/img/missing.jpg";
