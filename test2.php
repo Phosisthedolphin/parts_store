@@ -1,1 +1,0 @@
-<p>Proof of test2 content loading</p>
