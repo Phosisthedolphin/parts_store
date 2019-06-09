@@ -18,9 +18,9 @@
   <body>
     <header id="main-header">
       <img src='img/logo.jpeg' style='width: 160px; height: 80px;'>
-      <form>
-        <input type="text" size="30" onkeyup="searchEngine(this.value)">
-        <div id="searchform"></div>
+      <form name="searchform">
+        <input id="searchValue" type="text" name="search_word" />
+        <input class="search_button" type="submit" value="Search" />
       </form>
     </header>
     <div class="category-wrapper">

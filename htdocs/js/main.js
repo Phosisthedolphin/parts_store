@@ -1,8 +1,7 @@
 currentCategory = null;
 currentSubCategory = null;
 currentManufacturer = null;
-currentPartNumber = null;
-currentItemDescription = null;
+currentSearchWord = null;
 resultsPerPage = 40;
 currentPage = 0;
 totalResults = null;
@@ -94,13 +93,13 @@ function getSubCategories(category=null, manufacturer=null){
   return returnData
 }
 
-function getParts(category=null, sub_category=null, manufacturer=null, part_number=null, item_description=null, limit=40, offset=0){
+function getParts(category=null, sub_category=null, manufacturer=null, search_word=null, limit=40, offset=0){
   req_string = "/api/parts.php";
 
   req_string += "?"
   reqArray = []
 
-  if (category || manufacturer || sub_category || part_number || item_description)
+  if (category || manufacturer || sub_category || search_word)
   {
     if(category)
     {
@@ -117,14 +116,9 @@ function getParts(category=null, sub_category=null, manufacturer=null, part_numb
       reqArray.push(`sub_category="${sub_category}"`);
     }
 
-    if(part_number)
+    if(search_word)
     {
-      reqArray.push(`part_number="${part_number}"`);
-    }
-
-    if(item_description)
-    {
-      reqArray.push(`item_description="${item_description}"`);
+      reqArray.push(`search_word="${search_word}"`);
     }
   }
 
@@ -163,11 +157,19 @@ function clickManufacturer(){
   updatePage();
 }
 
-// function searchEngine(){
-//   currentCategory = $(this).attr('category');
-//   currentPage = 0;
-//   updatePage();
-// }
+// This is the function to take the search value.
+$(document).ready(function() {
+  $(".search_button").click(function(event){
+    //  alert( "Default behavior is disabled!" );
+     event.preventDefault();
+     var search_word = $('#searchValue').val();
+     console.log(search_word);
+     currentSearchWord = search_word;
+     console.log(currentSearchWord);
+     currentPage = 0;
+     updatePage();
+  });
+});
 
 function imageError(something){
   $(this).unbind("error");
@@ -270,7 +272,7 @@ function updateBody()
   catalogueWrapper = $("#catalogue-wrapper");
   catalogueWrapper.text("");
 
-  response = getParts(currentCategory, currentSubCategory, currentManufacturer, currentPartNumber, currentItemDescription, resultsPerPage, currentPage * resultsPerPage);
+  response = getParts(currentCategory, currentSubCategory, currentManufacturer, currentSearchWord, resultsPerPage, currentPage * resultsPerPage);
   totalResults = parseInt(response["totalResults"]);
   parts = response["data"]
 

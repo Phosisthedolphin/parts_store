@@ -23,18 +23,11 @@ if (isset($_GET["manufacturer"]))
   $manufacturer = null;
 }
 
-if (isset($_GET["part_number"]))
-{ 
-  $part_number = $_GET["part_number"];
-} else {
-  $part_number = null;
-}
-
-if (isset($_GET["item_description"]))
+if (isset($_GET["search_word"]))
 {
-  $item_description = $_GET["item_description"];
+  $search_word = $_GET["search_word"];
 } else {
-  $item_description = null;
+  $search_word = null;
 }
 
 if (isset($_GET["limit"]))
@@ -52,7 +45,7 @@ if (isset($_GET["offset"]))
 }
 
 $first_sql = "SELECT COUNT(*) FROM parts";
-$second_sql = "SELECT DISTINCT part_number, item_description, bin_description_2, bin_description_3, bin_description_4 FROM parts";
+$second_sql = "SELECT part_number, item_description, bin_description_2, bin_description_3, bin_description_4 FROM parts";
 
 $sql_where_statements = array();
 
@@ -68,13 +61,9 @@ if ($sub_category != NULL)
 {
   array_push($sql_where_statements, "bin_description_3={$sub_category}");
 }
-if ($part_number != NULL)
+if ($search_word != NULL)
 {
-  array_push($sql_where_statements, "part_number={$part_number}");
-}
-if ($item_description != NULL)
-{
-  array_push($sql_where_statements, "item_description={$item_description}");
+  array_push($sql_where_statements, "(part_number LIKE {$search_word} OR item_description LIKE {$search_word})");
 }
 
 if (count($sql_where_statements) > 0)
@@ -110,6 +99,7 @@ $return = array(
 );
 
 echo json_encode($return);
+echo ("error: " . mysqli_error($con));
 
 ?>
 
