@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect('localhost', 'root', 'toor');
+$con = mysqli_connect('localhost', 'root', '');
 mysqli_select_db($con, 'dolphin2');
 
 if (isset($_GET["category"]))

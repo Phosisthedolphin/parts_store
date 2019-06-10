@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect('localhost', 'root', 'toor');
+$con = mysqli_connect('localhost', 'root', '');
 mysqli_select_db($con, 'dolphin2');
 
 if (isset($_GET["category"]))
@@ -23,6 +23,13 @@ if (isset($_GET["manufacturer"]))
   $manufacturer = null;
 }
 
+if (isset($_GET["search_word"]))
+{
+  $search_word = $_GET["search_word"];
+} else {
+  $search_word = null;
+}
+
 if (isset($_GET["limit"]))
 {
   $limit = $_GET["limit"];
@@ -38,7 +45,7 @@ if (isset($_GET["offset"]))
 }
 
 $first_sql = "SELECT COUNT(*) FROM parts";
-$second_sql = "SELECT DISTINCT part_number, item_description, bin_description_2, bin_description_3, bin_description_4 FROM parts";
+$second_sql = "SELECT part_number, item_description, bin_description_2, bin_description_3, bin_description_4 FROM parts";
 
 $sql_where_statements = array();
 
@@ -50,10 +57,18 @@ if ($manufacturer != NULL)
 {
   array_push($sql_where_statements, "bin_description_4={$manufacturer}");
 }
-
 if ($sub_category != NULL)
 {
   array_push($sql_where_statements, "bin_description_3={$sub_category}");
+}
+if ($search_word != NULL)
+{
+  array_push($sql_where_statements, "(part_number REGEXP {$search_word} 
+  OR item_description REGEXP {$search_word}
+  OR bin_description_2 REGEXP {$search_word}
+  OR bin_description_3 REGEXP {$search_word}
+  OR bin_description_4 REGEXP {$search_word}
+  )");
 }
 
 if (count($sql_where_statements) > 0)
@@ -89,6 +104,7 @@ $return = array(
 );
 
 echo json_encode($return);
+// echo ("error: " . mysqli_error($con));
 
 ?>
 

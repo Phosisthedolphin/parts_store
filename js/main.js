@@ -1,6 +1,7 @@
 currentCategory = null;
 currentSubCategory = null;
 currentManufacturer = null;
+currentSearchWord = null;
 resultsPerPage = 40;
 currentPage = 0;
 totalResults = null;
@@ -92,13 +93,13 @@ function getSubCategories(category=null, manufacturer=null){
   return returnData
 }
 
-function getParts(category=null, sub_category=null, manufacturer=null, limit=40, offset=0){
+function getParts(category=null, sub_category=null, manufacturer=null, search_word=null, limit=40, offset=0){
   req_string = "/api/parts.php";
 
   req_string += "?"
   reqArray = []
 
-  if (category || manufacturer || sub_category)
+  if (category || manufacturer || sub_category || search_word)
   {
     if(category)
     {
@@ -113,6 +114,11 @@ function getParts(category=null, sub_category=null, manufacturer=null, limit=40,
     if(sub_category)
     {
       reqArray.push(`sub_category="${sub_category}"`);
+    }
+
+    if(search_word)
+    {
+      reqArray.push(`search_word="${search_word}"`);
     }
   }
 
@@ -134,6 +140,7 @@ function clickCategory(){
   currentCategory = $(this).attr('category');
   currentSubCategory = null;
   currentManufacturer = null;
+  currentSearchWord = null;
   currentPage = 0;
   updatePage();
 }
@@ -141,15 +148,33 @@ function clickCategory(){
 function clickSubCategory(){
   currentSubCategory = $(this).attr('subcategory');
   currentManufacturer = null;
+  currentSearchWord = null;
   currentPage = 0;
   updatePage();
 }
 
 function clickManufacturer(){
   currentManufacturer = $(this).attr('manufacturer');
+  currentSearchWord = null;
   currentPage = 0;
   updatePage();
 }
+
+// This is the function to take the search value.
+$(document).ready(function() {
+  $(".search_button").click(function(event){
+     event.preventDefault();
+     var search_word = $('#searchValue').val();
+     console.log(search_word);
+     currentSearchWord = search_word;
+     currentCategory = null;
+     currentSubCategory = null;
+     currentManufacturer = null;
+     console.log(currentSearchWord);
+     currentPage = 0;
+     updatePage();
+  });
+});
 
 function imageError(something){
   $(this).unbind("error");
@@ -252,7 +277,7 @@ function updateBody()
   catalogueWrapper = $("#catalogue-wrapper");
   catalogueWrapper.text("");
 
-  response = getParts(currentCategory, currentSubCategory, currentManufacturer, resultsPerPage, currentPage * resultsPerPage);
+  response = getParts(currentCategory, currentSubCategory, currentManufacturer, currentSearchWord, resultsPerPage, currentPage * resultsPerPage);
   totalResults = parseInt(response["totalResults"]);
   parts = response["data"]
 
@@ -318,7 +343,7 @@ function updatePagination()
   paginationDiv = $("#pagination-wrapper");
   paginationDiv.html("");
 
-  if (totalResults == null) getParts(currentCategory, currentSubCategory, currentManufacturer, resultsPerPage, currentPage * resultsPerPage);
+  if (totalResults == null) getParts(currentCategory, currentSubCategory, currentManufacturer, currentSearchWord, resultsPerPage, currentPage * resultsPerPage);
 
   pageCount = totalResults / resultsPerPage;
 
