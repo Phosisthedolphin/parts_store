@@ -288,10 +288,17 @@ function updateBody()
       catalogueCard.attr("class", "catalogue-card aos-init aos-animate");
       catalogueCard.attr('data-aos', 'fade-up');
 
+      
+      partDiv = $("<div>");
+      partDiv.attr("class","part-number");
+      partDiv.text(`${element[0]}`);
+      catalogueCard.append(partDiv);
+
       catalogueCardDescription = $("<div/>");
       catalogueCardDescription.attr("class", "catalogue-card-description");
       catalogueCardDescription.text(element[1]);
       catalogueCard.append(catalogueCardDescription);
+
 
       catalogueCardInner = $("<div/>");
       catalogueCardInner.attr("class", "catalogue-card-inner");
@@ -323,13 +330,7 @@ function updateBody()
         catalogueCardInner.append(lilImage);
       });
 
-      catalogueCardInner.append("<br><br>")
-      partDiv = $("<div>");
-      partDiv.attr("class","part-number");
-      partDiv.text(`#${element[0]}`);
-      catalogueCardInner.append(partDiv);
-
-      catalogueCardInner.append("<br><br>");
+      
       catalogueCard.append(catalogueCardInner);
 
       catalogueWrapper.append(catalogueCard);
