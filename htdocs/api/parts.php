@@ -1,6 +1,4 @@
-<?php
-$con = mysqli_connect('localhost', 'root', '');
-mysqli_select_db($con, 'dolphin2');
+<?php include "connect.php"; 
 
 if (isset($_GET["category"]))
 {
@@ -63,7 +61,12 @@ if ($sub_category != NULL)
 }
 if ($search_word != NULL)
 {
-  array_push($sql_where_statements, "(part_number LIKE {$search_word} OR item_description LIKE {$search_word})");
+  array_push($sql_where_statements, "(part_number REGEXP {$search_word} 
+  OR item_description REGEXP {$search_word}
+  OR bin_description_2 REGEXP {$search_word}
+  OR bin_description_3 REGEXP {$search_word}
+  OR bin_description_4 REGEXP {$search_word}
+  )");
 }
 
 if (count($sql_where_statements) > 0)
@@ -99,7 +102,7 @@ $return = array(
 );
 
 echo json_encode($return);
-echo ("error: " . mysqli_error($con));
+// echo ("error: " . mysqli_error($con));
 
 ?>
 

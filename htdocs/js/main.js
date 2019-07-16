@@ -140,6 +140,7 @@ function clickCategory(){
   currentCategory = $(this).attr('category');
   currentSubCategory = null;
   currentManufacturer = null;
+  currentSearchWord = null;
   currentPage = 0;
   updatePage();
 }
@@ -147,12 +148,14 @@ function clickCategory(){
 function clickSubCategory(){
   currentSubCategory = $(this).attr('subcategory');
   currentManufacturer = null;
+  currentSearchWord = null;
   currentPage = 0;
   updatePage();
 }
 
 function clickManufacturer(){
   currentManufacturer = $(this).attr('manufacturer');
+  currentSearchWord = null;
   currentPage = 0;
   updatePage();
 }
@@ -160,11 +163,13 @@ function clickManufacturer(){
 // This is the function to take the search value.
 $(document).ready(function() {
   $(".search_button").click(function(event){
-    //  alert( "Default behavior is disabled!" );
      event.preventDefault();
      var search_word = $('#searchValue').val();
      console.log(search_word);
      currentSearchWord = search_word;
+     currentCategory = null;
+     currentSubCategory = null;
+     currentManufacturer = null;
      console.log(currentSearchWord);
      currentPage = 0;
      updatePage();
@@ -283,10 +288,17 @@ function updateBody()
       catalogueCard.attr("class", "catalogue-card aos-init aos-animate");
       catalogueCard.attr('data-aos', 'fade-up');
 
+      
+      partDiv = $("<div>");
+      partDiv.attr("class","part-number");
+      partDiv.text(`${element[0]}`);
+      catalogueCard.append(partDiv);
+
       catalogueCardDescription = $("<div/>");
       catalogueCardDescription.attr("class", "catalogue-card-description");
       catalogueCardDescription.text(element[1]);
       catalogueCard.append(catalogueCardDescription);
+
 
       catalogueCardInner = $("<div/>");
       catalogueCardInner.attr("class", "catalogue-card-inner");
@@ -318,13 +330,7 @@ function updateBody()
         catalogueCardInner.append(lilImage);
       });
 
-      catalogueCardInner.append("<br><br>")
-      partDiv = $("<div>");
-      partDiv.attr("class","part-number");
-      partDiv.text(`#${element[0]}`);
-      catalogueCardInner.append(partDiv);
-
-      catalogueCardInner.append("<br><br>");
+      
       catalogueCard.append(catalogueCardInner);
 
       catalogueWrapper.append(catalogueCard);
@@ -338,7 +344,7 @@ function updatePagination()
   paginationDiv = $("#pagination-wrapper");
   paginationDiv.html("");
 
-  if (totalResults == null) getParts(currentCategory, currentSubCategory, currentManufacturer, currentPartNumber, currentItemDescription, resultsPerPage, currentPage * resultsPerPage);
+  if (totalResults == null) getParts(currentCategory, currentSubCategory, currentManufacturer, currentSearchWord, resultsPerPage, currentPage * resultsPerPage);
 
   pageCount = totalResults / resultsPerPage;
 
