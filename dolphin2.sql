@@ -1,19 +1,10 @@
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
-CREATE DATABASE IF NOT EXISTS `dolphin2` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `dolphin2`;
-
 CREATE TABLE IF NOT EXISTS `parts` (
   `bin_desc` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `bin_location` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `part_number` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `item_description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `category` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `supplier` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+,  `supplier` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `status` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `one_time` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `bin_location_duplicate` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -30,9 +21,7 @@ CREATE TABLE IF NOT EXISTS `parts` (
   `cos` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `oem_rt` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `count_duplicate` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-/*!40000 ALTER TABLE `parts` DISABLE KEYS */;
+);
 INSERT INTO `parts` (`bin_desc`, `bin_location`, `part_number`, `item_description`, `category`, `supplier`, `status`, `one_time`, `bin_location_duplicate`, `bin_description_duplicate`, `bin_location_2`, `bin_description_2`, `bin_description_3`, `bin_description_4`, `count`, `on_order`, `in_stock`, `spord_in_stock`, `core`, `cos`, `oem_rt`, `count_duplicate`) VALUES
 	('1', 'Bin', 'NPNXXXTEST', 'NPN Part - DO NOT DELETE OR CHANGE', 'USA Parts', 'NPN Part Supplier', 'Active', 'No', 'Bin', '1', '', '', '', '', '', '0', '0', '0', '0', '2,161.23', 'Cal-GBM', ''),
 	('1', 'NEEDS LOCATION', '3141', 'Brake Drum, 16.5" X 7"  10 Hole', 'Special Order Parts', 'Fleet Brake Parts & Service Co', 'Active', 'No', 'NEEDS LOCATION', '1', 'NEEDS LOCATION', '', '', '', '', '0', '0', '0', '', '1.66', 'Cal-GBM', ''),
