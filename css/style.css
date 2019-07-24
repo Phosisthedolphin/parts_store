@@ -411,6 +411,6 @@ a {
 .fancybox-button {
   display: flex;
   /* align-items: center; */
-  top: 60px;
-  left: -540px;
+  top: 80px;
+  left: -580px;
 }
