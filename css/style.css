@@ -379,15 +379,38 @@ a {
 .pagination {
   color: black;
   font-size: 24px;
+  background: #ECF3FF;
   border: 1px solid black;
   padding: 10px;
   justify-content: center;
   align-items: center;
   margin: 0px;
+  font-family: 'Roboto Condensed';
 }
 .pagination:hover {
   background: white;
 }
 .pagination a {
   color: black;
+}
+.testnewstuff {
+  color: white;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Roboto Condensed';
+  font-size: 22px;
+  font-weight: 400;
+  flex-direction: column;
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75));
+  width: 100%;
+  text-shadow: 2px solid black;
+}
+.fancybox-button {
+  display: flex;
+  /* align-items: center; */
+  top: 60px;
+  left: -540px;
 }

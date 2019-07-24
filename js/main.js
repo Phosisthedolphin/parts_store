@@ -179,6 +179,7 @@ $(document).ready(function() {
 function imageError(something){
   $(this).unbind("error");
   $(this).attr("src", "/img/missing.jpg");
+  // $(this).removeClass("thumb");
 }
 
 function updateHeader(){
@@ -294,11 +295,15 @@ function updateBody()
       partDiv.text(`${element[0]}`);
       catalogueCard.append(partDiv);
 
+    
+
       catalogueCardDescription = $("<div/>");
       catalogueCardDescription.attr("class", "catalogue-card-description");
       catalogueCardDescription.text(element[1]);
       catalogueCard.append(catalogueCardDescription);
-
+      // fancyCloseBtn = $("<button/>");
+      // fancyCloseBtn.attr("data-fancybox-close", "");
+      // fancyCloseBtn.attr("class", "fancybox-button--close");
 
       catalogueCardInner = $("<div/>");
       catalogueCardInner.attr("class", "catalogue-card-inner");
@@ -307,17 +312,22 @@ function updateBody()
       mainImageAnchor = $("<a/>");
       mainImageAnchor.attr("id", "image-link");
       mainImageAnchor.attr("href", `/img/${element[0]} A.jpeg`);
-      mainImageAnchor.attr("data-fancybox", "gallery");
+      mainImageAnchor.attr("data-fancybox", "");
+      // mainImageAnchor.attr("data-options", '{"smallBtn" : auto, "arrows" : false}');
 
       mainImageImage = $("<img/>");
       mainImageImage.attr("id", "full-image");
       mainImageImage.attr("src", `/img/${element[0]} A.jpeg`);
       mainImageImage.attr("class", "full");
+      
       mainImageImage.css("height", "200px");
       mainImageImage.on("error", imageError);
       mainImageAnchor.append(mainImageImage);
       catalogueCardInner.append(mainImageAnchor);
       catalogueCardInner.append("<br><br>");
+
+      
+
 
       letters = ['A', 'B', 'C', 'D'];
       letters.forEach(function(letter){

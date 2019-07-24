@@ -1,6 +1,4 @@
-<?php
-$con = mysqli_connect('localhost', 'root', '');
-mysqli_select_db($con, 'dolphin2');
+<?php include "connect.php";
 
 if (isset($_GET["sub_category"]))
 {
