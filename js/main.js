@@ -356,7 +356,7 @@ function updatePagination()
 
   if (totalResults == null) getParts(currentCategory, currentSubCategory, currentManufacturer, currentSearchWord, resultsPerPage, currentPage * resultsPerPage);
 
-  pageCount = Math.floor(totalResults / resultsPerPage);
+  pageCount = Math.ceil(totalResults / resultsPerPage);
 
   if (currentPage > 0)
   {
