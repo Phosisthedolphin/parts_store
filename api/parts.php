@@ -42,8 +42,17 @@ if (isset($_GET["offset"]))
   $offset = null;
 }
 
-$first_sql = "SELECT COUNT(*) FROM parts";
-$second_sql = "SELECT part_number, item_description, bin_description_2, bin_description_3, bin_description_4 FROM parts";
+$first_sql = "SELECT COUNT(*) FROM parts WHERE bin_location !='' AND (bin_description_2 !='' OR bin_description_3 !='' OR bin_description_4 !='')";
+
+$second_sql = "SELECT part_number, item_description, bin_description_2, bin_description_3, bin_description_4 FROM parts WHERE bin_location !='' AND (bin_description_2 !='' OR bin_description_3 !='' OR bin_description_4 !='')";
+
+//What is needed:
+
+//Any item that does not have a bin_location field should not appear. Items MUST have bin_description_2 OR bin_description_3, OR bin_description_4 in order to appear.
+
+//Pseudo code:
+
+//SELECT COUNT(*) FROM parts WHERE bin_location IS NOT NULL AND bin_description_2 OR bin_description_3 OR bin_description_4 IS NOT NULL
 
 $sql_where_statements = array();
 
@@ -71,8 +80,8 @@ if ($search_word != NULL)
 
 if (count($sql_where_statements) > 0)
 {
-  $first_sql = $first_sql . " WHERE ";
-  $second_sql = $second_sql . " WHERE ";
+  $first_sql = $first_sql . " AND ";
+  $second_sql = $second_sql . " AND ";
 
   $sql_where = join(" AND ", $sql_where_statements);
 

@@ -35,7 +35,7 @@ if (isset($_GET["offset"]))
   $offset = null;
 }
 
-$sql = "SELECT COUNT(*) FROM parts";
+$sql = "SELECT COUNT(*) FROM parts WHERE bin_location !='' AND (bin_description_2 !='' OR bin_description_3 !='' OR bin_description_4 !='')";
 $sql_where_statements = array();
 
 if ($category != NULL)
@@ -54,7 +54,7 @@ if ($sub_category != NULL)
 
 if (count($sql_where_statements) > 0)
 {
-  $sql = $sql . " WHERE ";
+  $sql = $sql . " AND ";
   $sql_where = join(" AND ", $sql_where_statements);
   $sql = $sql . $sql_where;
 }
