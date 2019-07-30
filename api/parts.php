@@ -43,8 +43,8 @@ if (isset($_GET["offset"]))
 }
 
 $first_sql = "SELECT COUNT(*) FROM parts WHERE bin_location !='' AND (bin_description_2 !='' OR bin_description_3 !='' OR bin_description_4 !='')";
-
 $second_sql = "SELECT part_number, item_description, bin_description_2, bin_description_3, bin_description_4 FROM parts WHERE bin_location !='' AND (bin_description_2 !='' OR bin_description_3 !='' OR bin_description_4 !='')";
+$order = "ORDER BY part_number ASC";
 
 //What is needed:
 
@@ -86,7 +86,9 @@ if (count($sql_where_statements) > 0)
   $sql_where = join(" AND ", $sql_where_statements);
 
   $first_sql = $first_sql . $sql_where;
-  $second_sql = $second_sql . $sql_where;
+  $second_sql = $second_sql . $sql_where . $order;
+} else {
+  $second_sql = $second_sql . $order;
 }
 
 if ($limit != NULL)
