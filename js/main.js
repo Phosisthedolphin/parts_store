@@ -9,6 +9,8 @@ totalResults = null;
 function getCategories(sub_category=null, manufacturer=null){
   req_string = "/api/category.php";
 
+ 
+
   if (manufacturer || sub_category)
   {
     req_string += "?"
@@ -184,6 +186,7 @@ function imageError(something){
 
 function updateHeader(){
   //erase the olde
+
   header = $("#manufacturer-header")
   header.text("");
   header.css("display", "none")
@@ -196,12 +199,52 @@ function updateHeader(){
   header.text("")
 
   //Make the categories
+
+  //First is a library for bin_description_2, 3, and 4. Abbreviated variables taken from the database followed by the unnabreviated
+  //form as it should be displayed on the frontend.
+  $categoryMap = {
+    "ALARM": "ALARMS",
+    "VALVE": "VALVES",
+    "LIGHT": "LIGHTING",
+    "ELECTRIC": "ELECTRICAL",
+    "HOSEBAY": "HOSES",
+    "BOLT": "BOLTS"
+  };
+
+  $subCategoryMap = {
+    "REFLECT": "REFLECTOR",
+    "TEMPERAT": "TEMPERATURE",
+    "REPAIRKI": "REPAIR KIT",
+    "EMERGENCY": "EMERGENCY",
+    "FIBERGLA": "FIBER GLASS",
+    "INCANDES": "INCANDESCANT",
+    "ALLTHRD": "ALL THREAD"
+  };
+
+  $manufacturerMap = {
+    "ARCTICFL": "ARCTICFLEX",
+    "SPEEDDEM": "SPEED DEMON",
+    "TRUCKLIT": "TRUCKLITE",
+    "REELCRAFT": "REELCRAFT",
+    "HENDRICK": "HENDRICKSON",
+    "GORMAN R": "GORMAN RUPP",
+    "ALLEGHEN": "ALLEGHENY",
+    "PHILLIPS": "PHILIPS"
+  };
+
   newList = $("<ul>");
   categories = getCategories();
   categories.forEach(function(element){
     newListItem = $("<li>");
     newListButton = $("<button>");
-    newListButton.html(element);
+
+    if ($categoryMap[element] = $categoryMap[element]) {
+    newListButton.html($categoryMap[element]);
+    } else {
+      newListButton.html(element);
+    };
+
+    console.log(element);
     newListButton.attr('category', element);
     newListButton.on("click", clickCategory);
     newListItem.append(newListButton);
@@ -231,7 +274,22 @@ function updateHeader(){
     subCategories.forEach(function(element){
       newListItem = $("<li>");
       newListButton = $("<button>");
-      newListButton.html(element);
+
+      //THIS IS WHERE TO PUT THE FILTER FOR CATEGORY MAP
+
+      //Only the internal text for the DOM item needs to change. So for category:
+
+      //newListButton.html(element);
+      //newListButton.attr('category', element);
+
+      //Only change the .html part
+
+      if ($subCategoryMap[element] = $subCategoryMap[element]) {
+        newListButton.html($subCategoryMap[element]);
+        } else {
+          newListButton.html(element);
+        };
+
       newListButton.attr('subcategory', element);
       newListButton.on("click",clickSubCategory);
       newListItem.append(newListButton);
@@ -262,7 +320,11 @@ function updateHeader(){
     manufacturers.forEach(function(element){
       newListItem = $("<li>");
       newListButton = $("<button>");
-      newListButton.html(element);
+        if (element in $manufacturerMap) {
+      newListButton.html($manufacturerMap[element]);
+      } else {
+        newListButton.html(element);
+      };
       newListButton.attr('manufacturer', element);
       newListButton.on("click", clickManufacturer);
       newListItem.append(newListButton);
