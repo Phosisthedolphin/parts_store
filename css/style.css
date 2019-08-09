@@ -414,3 +414,10 @@ a {
   top: 80px;
   left: -580px;
 }
+#splash-image {
+  
+}
+#outer-wrapper {
+  display: flex;
+  justify-content: center;
+}

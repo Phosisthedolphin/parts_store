@@ -337,6 +337,9 @@ function updateHeader(){
 
 function updateBody()
 {
+  
+  outerWrapper = $("#outer-wrapper");
+  outerWrapper.text("");
   catalogueWrapper = $("#catalogue-wrapper");
   catalogueWrapper.text("");
 
@@ -404,8 +407,9 @@ function updateBody()
 
       
       catalogueCard.append(catalogueCardInner);
-
+      
       catalogueWrapper.append(catalogueCard);
+      outerWrapper.append("");
     });
 
     
@@ -504,5 +508,7 @@ function updatePage()
 
 $((function(){
   //can use JS to get the things.
-  updatePage();
+  updateHeader();
+  updateBodyPagination();
+  // updatePage();
 }));
