@@ -16,6 +16,7 @@ if (isset($_GET["manufacturer"]))
 
 $sql = "SELECT DISTINCT bin_description_3 FROM parts";
 $sql_where_statements = array();
+$order = "ORDER BY bin_description_3 ASC";
 
 if ($category != NULL)
 {
@@ -30,7 +31,7 @@ if (count($sql_where_statements) > 0)
 {
   $sql = $sql . " WHERE ";
   $sql_where = join(" AND ", $sql_where_statements);
-  $sql = $sql . $sql_where;
+  $sql = $sql . $sql_where . $order;
 }
 
 $result = mysqli_query($con, $sql);

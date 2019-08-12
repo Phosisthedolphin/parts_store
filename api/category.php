@@ -14,8 +14,9 @@ if (isset($_GET["manufacturer"]))
   $manufacturer = null;
 }
 
-$sql = "SELECT DISTINCT bin_description_2 FROM parts";
+$sql = "SELECT DISTINCT bin_description_2 FROM parts ORDER BY bin_description_2 ASC";
 $sql_where_statements = array();
+// $order = "ORDER BY bin_description_2 ASC";
 
 if ($sub_category != NULL)
 {

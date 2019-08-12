@@ -414,10 +414,24 @@ a {
   top: 80px;
   left: -580px;
 }
-#splash-image {
-  
-}
 #outer-wrapper {
   display: flex;
   justify-content: center;
+  /* background-image: url('../img/PARTS\ WEB\ COVER\ 2.jpg'); */
+  /* background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; */
+}
+#splash-title {
+  position:relative;
+  font-family: 'Roboto Condensed';
+  font-size: 32px;
+  background: black;
+  color: white;
+  padding: auto;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  top: 10px;
+  /* width: 400px; */
 }
