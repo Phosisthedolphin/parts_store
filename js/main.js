@@ -208,7 +208,6 @@ function updateHeader(){
   //form as it should be displayed on the frontend.
   $categoryMap = {
     "ALARM": "ALARMS",
-    "VALVE": "VALVES",
     "LIGHT": "LIGHTING",
     "ELECTRIC": "ELECTRICAL",
     "HOSEBAY": "HOSES",
@@ -221,10 +220,10 @@ function updateHeader(){
     "REFLECT": "REFLECTOR",
     "TEMPERAT": "TEMPERATURE",
     "REPAIRKI": "REPAIR KIT",
-    "EMERGENCY": "EMERGENCY",
+    "EMERGENC": "EMERGENCY",
     "FIBERGLA": "FIBER GLASS",
     "CHEM/HYD": "CHEMICAL/HYDRAULIC",
-    "INCANDES": "INCANDESCANT",
+    "INCANDES": "INCANDESCENT",
     "ALLTHRD": "ALL THREAD",
     "HYDRAULI": "HYDRAULIC",
     "SIGHTGLA": "SIGHT GLASS",
@@ -232,7 +231,8 @@ function updateHeader(){
     "COMPOSIT": "COMPOSITE",
     "SUSPENSI": "SUSPENSION",
     "PRESS/VA": "PRESS/VAC",
-    "SUPERSTO": "SUPERSTOP"
+    "SUPERSTO": "SUPERSTOP",
+    "THERMOME": "THERMOMETER"
 
     
   };
@@ -251,7 +251,8 @@ function updateHeader(){
     "VICTAULI": "VICTAULIC",
     "COLEHERS": "COLE HERSEE",
     "HONEYWEL": "HONEY WELL",
-    "CHALLENG": "CHALLENGER"
+    "CHALLENG": "CHALLENGER",
+    "SUPERTO": "SUPERSTOP"
   };
 
   newList = $("<ul>");
