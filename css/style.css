@@ -143,7 +143,8 @@ header {
 	padding: 0;
 	font: inherit;
 	cursor: pointer;
-	outline: inherit;
+  outline: inherit;
+  padding: 5px;
 }
 #category-header {
     min-height: 50px;
@@ -152,6 +153,7 @@ header {
     justify-content: center;
     flex-direction: row;
     flex-wrap: row;
+    padding:5px;
 }
 #category-header ul li {
     font-family: 'Roboto Condensed', sans-serif;
