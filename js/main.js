@@ -34,12 +34,21 @@ function getCategories(sub_category=null, manufacturer=null){
   }
 
   returnData = []
-  returnData = $.parseJSON($.ajax({
+  // returnData = $.parseJSON($.ajax({
+  //   url: req_string,
+  //   async: false
+  // }).responseText);
+
+  rawData = $.ajax({
     url: req_string,
     async: false
-  }).responseText);
+  }).responseText
 
-  return returnData
+console.log(rawData);
+
+returnData = $.parseJSON(rawData);
+
+  return returnData;
 }
 
 function getManufacturers(category=null, sub_category=null){
@@ -257,6 +266,8 @@ function updateHeader(){
 
   newList = $("<ul>");
   categories = getCategories();
+
+  console.log(categories);
   categories.forEach(function(element){
     newListItem = $("<li>");
     newListButton = $("<button>");
@@ -293,6 +304,7 @@ function updateHeader(){
       header.css("display", "block");
     }
     // console.log(subCategories);
+
 
     subCategories.forEach(function(element){
       newListItem = $("<li>");
@@ -539,7 +551,9 @@ function cartButtonRemove(something) {
     if (arrObj[i].part == $(this).attr("data"))
     {
       match = true;
+      if (arrObj[i].quantity > 1) {
       arrObj[i].quantity--
+      }
     }
 
   }
@@ -570,6 +584,7 @@ function updateBody()
 
     parts.forEach(function(element)
     {
+      var cleanstring = element[0].replace(/\/|\./g, "");
       console.log(currentPage);
       catalogueCard = $("<div/>");
       catalogueCard.attr("class", "catalogue-card aos-init aos-animate");
@@ -597,13 +612,13 @@ function updateBody()
 
       mainImageAnchor = $("<a/>");
       mainImageAnchor.attr("id", "image-link");
-      mainImageAnchor.attr("href", `/img/${element[0]} A.jpeg`);
+      mainImageAnchor.attr("href", `/img/${cleanstring} A.jpeg`);
       mainImageAnchor.attr("data-fancybox", "");
       // mainImageAnchor.attr("data-options", '{"smallBtn" : auto, "arrows" : false}');
 
       mainImageImage = $("<img/>");
       mainImageImage.attr("id", "full-image");
-      mainImageImage.attr("src", `/img/${element[0]} A.jpeg`);
+      mainImageImage.attr("src", `/img/${cleanstring} A.jpeg`);
       mainImageImage.attr("class", "full");
       
       mainImageImage.css("height", "200px");
@@ -620,7 +635,7 @@ function updateBody()
         lilImage = $("<img>");
         lilImage.attr("class", "thumb");
         lilImage.css("height", "50px");
-        lilImage.attr("src", `/img/${element[0]} ${letter}.jpeg`);
+        lilImage.attr("src", `/img/${cleanstring} ${letter}.jpeg`);
         lilImage.on("error", imageError);
         lilImage.on("click", thumbClick)
         catalogueCardInner.append(lilImage);
