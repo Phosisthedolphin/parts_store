@@ -14,9 +14,9 @@ if (isset($_GET["manufacturer"]))
   $manufacturer = null;
 }
 
-$sql = "SELECT DISTINCT bin_description_2 FROM parts ORDER BY bin_description_2 ASC";
+$sql = "SELECT DISTINCT bin_description_2 FROM parts";
 $sql_where_statements = array();
-// $order = "ORDER BY bin_description_2 ASC";
+$order = "ORDER BY bin_description_2 ASC";
 
 if ($sub_category != NULL)
 {
@@ -27,6 +27,11 @@ if ($manufacturer != NULL)
   array_push($sql_where_statements, "bin_description_4={$manufacturer}");
 }
 
+// array_push($sql_where_statements, "bin_description_2!=''");
+
+// array_push($sql_where_statements, "bin_description_2!=\"\"");
+array_push($sql_where_statements, "bin_description_2 != \"\"");
+
 if (count($sql_where_statements) > 0)
 {
   $sql = $sql . " WHERE ";
@@ -34,7 +39,21 @@ if (count($sql_where_statements) > 0)
   $sql = $sql . $sql_where;
 }
 
+$sql = $sql . $order;
+// $result = mysqli_query($con, $sql);
+
+// echo json_encode(mysqli_fetch_all($result));
+// echo $sql;
+
 $result = mysqli_query($con, $sql);
 
-echo json_encode(mysqli_fetch_all($result));
+if (!$result)
+{
+  echo $sql;
+  echo mysqli_error($con);
+}
+else
+{
+  echo json_encode(mysqli_fetch_all($result));
+}
 ?>
