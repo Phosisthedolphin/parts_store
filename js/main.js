@@ -301,7 +301,8 @@ function updateHeader(){
 
     if(subCategories.length > 0)
     {
-      header.css("display", "block");
+      header.css("display", "flex");
+      // header.css("flex-wrap", "wrap");
     }
     // console.log(subCategories);
 
@@ -339,7 +340,8 @@ function updateHeader(){
     header = $("#manufacturer-header")
     header.text("");
 
-    header.css("display", "block");
+    header.css("display", "flex");
+    // header.css("flex-wrap", "wrap");
     newList = $("<ul>");
     manufacturers = getManufacturers(currentCategory, currentSubCategory);
 
@@ -349,7 +351,8 @@ function updateHeader(){
 
     if (manufacturers.length > 0)
     {
-      header.css("display", "block");
+      header.css("display", "flex");
+      // header.css("flex-wrap", "wrap");
     }
 
     manufacturers.forEach(function(element){
