@@ -493,8 +493,9 @@ a {
   font-weight: 400;
   flex-direction: column;
   background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75));
-  width: 100%;
   text-shadow: 2px solid black;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .fancybox-button {
   display: flex;
