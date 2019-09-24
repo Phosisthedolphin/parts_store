@@ -15,7 +15,7 @@ body {
     background: linear-gradient(
     rgba(236, 243, 255, 0.75), 
     rgba(236, 243, 255, 0.75)),
-    url(../img/BACKGROUND.jpg);
+    url(../staticimg/BACKGROUND.jpg);
     background-attachment: fixed;
     background-size: auto;
     background-position: center;
@@ -92,6 +92,7 @@ a {
 }
 .catalogue-card {
   min-height: 420px;
+  max-width: 350px;
   background: white;
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
@@ -119,6 +120,34 @@ box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.39);
 .thumb {
   cursor: pointer;
 }
+#goto-order-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: auto;
+  margin: auto;
+}
+#goto-order {
+  background: #0060B6;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+  z-index: 1000;
+  padding: 5px 10px 5px 10px;
+  font-family: 'Roboto Condensed';
+  bottom: 0px;
+}
+#goto-order:hover {
+  background: white;
+  border: 1px solid #0060B6;
+  color: #0060B6;
+}
+#goto-order a:hover {
+  color: #0060B6;
+}
 header {
   height: 80px;
   background: white;
@@ -133,7 +162,7 @@ header {
   text-align: left;
   flex-direction: row;
   color: white;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   /* align-items: center; */
 }
 .category-wrapper button {
@@ -152,8 +181,44 @@ header {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    flex-wrap: row;
+    flex-wrap: wrap;
     padding:5px;
+}
+#sub-category-header {
+  padding: 5px;
+  flex-wrap: wrap;
+}
+#sub-category-header ul li {
+  /* display: inline-block; */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  
+}
+#sub-category-header ul {
+  padding-right: 40px;
+  margin: auto;
+  margin-bottom: 5px;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+#manufacturer-header {
+  padding: 5px;
+  flex-wrap: wrap;
+}
+#manufacturer-header ul li {
+  /* display: inline-block; */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  
+}
+#manufacturer-header ul {
+  padding-right: 40px;
+  margin: auto;
+  margin-bottom: 5px;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 #category-header ul li {
     font-family: 'Roboto Condensed', sans-serif;
@@ -161,17 +226,21 @@ header {
     text-transform: uppercase;
     display: inline-block;
     margin-right: 20px;
+    justify-content: center;
 }
 .category-title {
   color: white;
 }
 .sub-header-dropdown {
-  height: 50px;
+  min-height: 50px;
   background: #0060B6;
   display: none;
   flex-direction: row;
+  flex-wrap: wrap;
   position: relative;
   border-bottom: black 1px solid;
+  padding: 10px;
+  max-width: 100%;
 }
 .sub-header-dropdown button {
   background: none;
@@ -213,8 +282,10 @@ header {
   align-items: center;
 }
 .part-number {
-  display: flex;
   justify-content: left;
+  flex-wrap: wrap;
+  max-width: 350px;
+  word-wrap: break-word;
   font-weight: 600;
   color: #0772C3;
   margin-left: 8px;
@@ -452,6 +523,12 @@ a {
   top: 10px;
   /* width: 400px; */
 }
+#splash-image {
+  max-width: 100%;
+}
+#splash-image img {
+  max-width: 100%;
+}
 .contactSections {
   display: flex;
   flex-direction: row;
@@ -540,7 +617,7 @@ box-shadow: 25px 20px 39px 0px rgba(0,0,0,0.75);
 }
 #cartItem {
   display: grid;
-  grid-template-columns: 60px 120px 50px 50px 50px 50px;
+  grid-template-columns: 60px 160px 50px 50px 50px 50px;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
@@ -552,6 +629,14 @@ box-shadow: 25px 20px 39px 0px rgba(0,0,0,0.75);
   border-bottom: 1px solid lightgray;
   width: 90%;
 }
+#cartItem button {
+  font-size: 14px !important;
+  font-family: 'Roboto Condensed';
+}
+#cart button {
+  font-size: 24px;
+  font-family: 'Roboto Condensed';
+}
 .cartPartNumber {
   font-size: 28px;
   color: #0772C3;
@@ -560,6 +645,10 @@ box-shadow: 25px 20px 39px 0px rgba(0,0,0,0.75);
 .cartItemDescription {
   font-size: 22px;
   font-weight: 500;
+}
+.cartItemQuantity {
+  font-size: 22px;
+  font-weight: 600;
 }
 #cartSubmitButton {
   min-width: 80px;
@@ -586,4 +675,22 @@ box-shadow: 25px 20px 39px 0px rgba(0,0,0,0.75);
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
+  font-family: 'Roboto Condensed';
+  font-size: 24px;
+  padding: 25px;
+}
+#checkout input[type=text], input[type=email], input[type=phone], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  font-size: 20px;
+  font-family: 'Roboto Condensed';
+}
+#checkout button {
+  font-family: 'Roboto Condensed';
+  font-size: 22px;
 }

@@ -17,8 +17,13 @@
     <script type="text/javascript" src="js/pagination.js"></script>
   </head>
   <body>
+    <div id="goto-order-wrap">
+      <div id="goto-order">
+        <a href="#main-header">GO TO CART <i class="fas fa-shopping-cart" style="margin-left: 5px;"></i></a>
+      </div>
+    </div>
     <header id="main-header">
-      <a href="./index.html"><img src='img/logo.jpeg' style='width: 160px; height: 80px;'></a>
+      <a href="./index.html"><img src='staticimg/logo.jpeg' style='width: 160px; height: 80px;'></a>
       <form name="searchform">
         <input id="searchValue" type="text" name="search_word" />
         <input class="search_button" type="submit" value="Search" />
@@ -40,11 +45,84 @@
          or <a href="tel:888 426 9717">888 GBM 9717</a>
          or email <a href="mattgraham@gbmtrailer.ca">mgraham@gbmtrailer.ca</a> to place an order</span>
     </div>
+    <div id="cart">
+
+      <div id="cartItem">
+        <div class="cartPartNumber">
+          2929299
+        </div>
+        <div class="cartItemDescription">
+          3 1/2" Frungy Stick with Rock and Peanut Steering
+        </div>
+        <div class="cartItemQuantity">
+          2
+        </div>
+        <div class="cartItemDelete">
+          Delete
+        </div>
+      </div>
+
+      <div id="cartItem">
+          <div class="cartPartNumber">
+            2929299
+          </div>
+          <div class="cartItemDescription">
+            3 1/2" Frungy Stick with Rock and Peanut Steering
+          </div>
+          <div class="cartItemQuantity">
+            2
+          </div>
+          <button id="cartButtonAdd">
+            +
+          </button>
+          <button id="cartButtonRemove">
+            -
+          </button>
+          <button id="cartItemDelete">
+            Delete
+          </button>
+        </div>
+   
+        <button id="cartSubmitButton" onclick="submitOrderButton()">Complete Order</div>
+    </div>
+    <div id="checkout">
+      <span>Please complete the following order form and press submit when finished.</span><br/>
+      <span>Our parts team will review the order and contact you to confirm it is available for pickup.</span>
+
+      <div id="form-messages"></div><br /><br />
+      <form id="ajax-contact" method="post" action="api/mailer.php">
+        <div class="field">
+            <label for="name">Name:</label><br />
+            <input type="text" id="name" name="name">
+        </div>
+    
+        <div class="field">
+            <label for="email">Email:</label><br />
+            <input type="email" id="email" name="email" required>
+        </div>
+    
+        <div class="field">
+          <label for="phone">Phone number:</label><br />
+          <input type="phone" id="phone" name="phone"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="message">Message:</label><br />
+          <textarea id="message" name="message"></textarea>
+      </div>
+    
+        <div class="field">
+            <button type="submit">Submit Order</button>
+        </div>
+
+
+    </form>
+    </div>
     
     <div id="outer-wrapper">
         <div id='splash-image'>
             <div id='splash-title'>Select a category or type a search word above</div>
-            <img src="/img/PARTS WEB COVER 2.jpg">
+            <img src="/staticimg/PARTS WEB COVER 2.jpg">
           </div>
         </div>
     <div id="catalogue-wrapper">
