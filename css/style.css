@@ -670,7 +670,7 @@ box-shadow: 25px 20px 39px 0px rgba(0,0,0,0.75);
 #checkout {
   background: #0772C3;
   min-height: 400px;
-  width: 100%;
+  /* width: 100%; */
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -679,6 +679,7 @@ box-shadow: 25px 20px 39px 0px rgba(0,0,0,0.75);
   font-family: 'Roboto Condensed';
   font-size: 24px;
   padding: 25px;
+  margin: 0;
 }
 #checkout input[type=text], input[type=email], input[type=phone], select, textarea{
   width: 100%;
