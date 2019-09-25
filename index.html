@@ -29,15 +29,21 @@
         <input class="search_button" type="submit" value="Search" />
       </form>
     </header>
+
     <div class="category-wrapper">
+      <h2>Select a Part type to start</h2>
       <div id="category-header">
       </div>
     </div>
-    <div id="sub-category-header" class="sub-header-dropdown">
+
+    <div class="sub-category-wrapper">
+      <div id="sub-category-header" class="sub-header-dropdown">
+      </div>
     </div>
-    </div>
+  
     <div id="manufacturer-header" class="sub-header-dropdown">
     </div>
+
     <div class='testnewstuff'>
       <span>More products coming soon!</span>
       <br>
@@ -48,11 +54,13 @@
     <div id="cart">
 
       <div id="cartItem">
-        <div class="cartPartNumber">
-          2929299
-        </div>
-        <div class="cartItemDescription">
-          3 1/2" Frungy Stick with Rock and Peanut Steering
+        <div id="section-cartPart">
+          <div class="cartPartNumber">
+            2929299
+          </div>
+          <div class="cartItemDescription">
+            3 1/2" Frungy Stick with Rock and Peanut Steering
+          </div>
         </div>
         <div class="cartItemQuantity">
           2
@@ -69,15 +77,17 @@
           <div class="cartItemDescription">
             3 1/2" Frungy Stick with Rock and Peanut Steering
           </div>
-          <div class="cartItemQuantity">
-            2
+          <div id="section-cartQuantity">
+            <button id="cartButtonAdd">
+              +
+            </button>
+            <div class="cartItemQuantity">
+                2
+              </div>
+            <button id="cartButtonRemove">
+              -
+            </button>
           </div>
-          <button id="cartButtonAdd">
-            +
-          </button>
-          <button id="cartButtonRemove">
-            -
-          </button>
           <button id="cartItemDelete">
             Delete
           </button>
