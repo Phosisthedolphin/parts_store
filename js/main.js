@@ -382,6 +382,12 @@ function updateCart() {
 
     cartItem = $("<div/>");
     cartItem.attr("id", "cartItem");
+
+    sectionCartPart = $("<div/>");
+    sectionCartPart.attr("id", "section-cartPart");
+
+    sectionCartQuantity = $("<div/>");
+    sectionCartQuantity.attr("id", "section-cartQuantity");
     
     cartPartNumber = $("<div/>");
     cartPartNumber.attr("class", "cartPartNumber");
@@ -414,12 +420,17 @@ function updateCart() {
     cartSubmitButton = $("<button/>");
     cartSubmitButton.on("click", submitOrderButton);
     cartSubmitButton.text("Complete Order");
+
+    sectionCartPart.append(cartPartNumber);
+    sectionCartPart.append(cartItemDescription);
+
+    sectionCartQuantity.append(cartButtonDown);
+    sectionCartQuantity.append(cartItemQuantity);
+    sectionCartQuantity.append(cartButtonUp);
+  
     
-    cartItem.append(cartPartNumber);
-    cartItem.append(cartItemDescription);
-    cartItem.append(cartItemQuantity);
-    cartItem.append(cartButtonUp);
-    cartItem.append(cartButtonDown);
+    cartItem.append(sectionCartPart);
+    cartItem.append(sectionCartQuantity);
     cartItem.append(cartItemDelete);
     cart.append(cartItem);
     
