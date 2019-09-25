@@ -161,9 +161,17 @@ header {
   display: flex;
   text-align: left;
   flex-direction: row;
+  justify-content: center;
   color: white;
   flex-wrap: wrap;
   /* align-items: center; */
+}
+.category-wrapper h2 {
+  color: white;
+  font-family: 'Roboto Condensed';
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: -5px;
 }
 .category-wrapper button {
   background: none;
@@ -183,6 +191,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     padding:5px;
+    font-size: 20px;
 }
 #sub-category-header {
   padding: 5px;
@@ -618,7 +627,7 @@ box-shadow: 25px 20px 39px 0px rgba(0,0,0,0.75);
 }
 #cartItem {
   display: grid;
-  grid-template-columns: 60px 160px 50px 50px 50px 50px;
+  grid-template-columns: 300px 100px 50px;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
@@ -650,6 +659,10 @@ box-shadow: 25px 20px 39px 0px rgba(0,0,0,0.75);
 .cartItemQuantity {
   font-size: 22px;
   font-weight: 600;
+}
+#section-cartQuantity {
+  display: flex;
+  justify-content: space-evenly;
 }
 #cartSubmitButton {
   min-width: 80px;
