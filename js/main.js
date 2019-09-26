@@ -515,7 +515,7 @@ $(function() {
 
 
 function submitButton(something) {
-  window.scroll(0,0);
+  document.getElementById("goto-order").style.display = "flex";
   cartData = ($(this).attr("data").split(','));
 
 let cartObj = {
