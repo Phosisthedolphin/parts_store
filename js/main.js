@@ -414,6 +414,8 @@ function updateCart() {
     cartButtonDown.text("-");
 
     cartItemDelete = $("<button/>");
+    cartItemDelete.attr("data", element.part);
+    cartItemDelete.on("click", cartButtonDelete)
     cartItemDelete.attr("id", "cartItemDelete");
     cartItemDelete.text("Delete");
 
@@ -437,6 +439,7 @@ function updateCart() {
   
       
     });
+   
     cart.append(cartSubmitButton);
 }
 
@@ -543,7 +546,7 @@ console.log(arrObj);
   console.log(arrObj);
 }
 
-function cartButtonAdd(something) {
+function cartButtonAdd() {
   for (var i = 0; i < arrObj.length; i++){
     if (arrObj[i].part == $(this).attr("data"))
     {
@@ -560,7 +563,7 @@ function cartButtonAdd(something) {
 }
 
 
-function cartButtonRemove(something) {
+function cartButtonRemove() {
   for (var i = 0; i < arrObj.length; i++) {
     if (arrObj[i].part == $(this).attr("data"))
     {
@@ -575,8 +578,21 @@ function cartButtonRemove(something) {
 }
 
 function cartButtonDelete() {
+ for (var i = 0; i < arrObj.length; i++) {
+    if (arrObj[i].part == $(this).attr("data"))
+    {
+      match = true;
+      arrObj.splice(i, 1);
+      }
 
-}
+    }
+    if (arrObj.length === 0) {
+      console.log("SUCCESS");
+      document.getElementById("cart").style.display = "none";
+      document.getElementById("checkout").style.display = "none";
+    }
+    updateCart();
+  }
 
 function submitOrderButton() {
   let checkout = document.getElementById("checkout")
