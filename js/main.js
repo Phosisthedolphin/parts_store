@@ -590,6 +590,7 @@ function cartButtonDelete() {
       console.log("SUCCESS");
       document.getElementById("cart").style.display = "none";
       document.getElementById("checkout").style.display = "none";
+      document.getElementById("goto-order").style.display = "none";
     }
     updateCart();
   }
