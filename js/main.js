@@ -614,7 +614,8 @@ function updateBody()
 
     parts.forEach(function(element)
     {
-      var cleanstring = element[0].replace(/\/|\./g, "");
+      // var cleanstring = element[0].replace(/\/|\./g, "");
+      var cleanstring = element[0].replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, "");
       console.log(currentPage);
       catalogueCard = $("<div/>");
       catalogueCard.attr("class", "catalogue-card aos-init aos-animate");
